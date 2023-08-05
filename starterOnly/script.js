@@ -42,7 +42,6 @@ function afficherMessageErreur(message,balise) {
     let spanErreurMessage = document.getElementById(`erreurMessage${balise}`)
 
     if (!spanErreurMessage) {
-        // let popup = document.querySelector(".popup")
         spanErreurMessage = document.createElement("span")
         spanErreurMessage.id = `erreurMessage${balise}`
         const baliseAValider=document.getElementById(`${balise}`)
