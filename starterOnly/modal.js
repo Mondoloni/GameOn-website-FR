@@ -43,7 +43,8 @@ form.addEventListener("submit",(event)=>{
   
   validerChampCivilite(`first`,"Prénom");
   validerChampCivilite(`last`,"Nom");
-  validerEmail(`email`)
-
-
+  validerEmail(`email`);
+  validerNbr('quantity');
+  validerRadio(`location`,`location6`)
+  validerCheckBox(`checkbox1`)
 });
