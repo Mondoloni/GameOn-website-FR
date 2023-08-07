@@ -6,7 +6,7 @@
 */
 function validerChampCivilite(balise,texte) {
 const baliseAValider=document.getElementById(`${balise}`);
-
+viderBaliseErreur(balise)
     try{
         if (baliseAValider.value.length < 2) 
         {
@@ -23,6 +23,7 @@ const baliseAValider=document.getElementById(`${balise}`);
 function validerEmail(email) {
     const baliseEmail=document.getElementById(`${email}`)
     let emailRegExp = new RegExp("[a-z0-9._-]+@[a-z0-9._-]+\\.[a-z0-9._-]+")
+    viderBaliseErreur(email)
     try
     {
         if (!emailRegExp.test(baliseEmail.value)) 
@@ -41,6 +42,7 @@ function validerNbr(balise)
 {
     const baliseNbr=document.getElementById(`${balise}`)
     let nbrRegExp = new RegExp("[0-9]+")
+    viderBaliseErreur(balise)
     try
     {
         if (!nbrRegExp.test(baliseNbr.value)) 
@@ -58,6 +60,7 @@ function validerRadio(balise,nomBalise)
 {
     let baliseCheckBox = document.querySelectorAll(`input[name="${balise}"]`)
     let check = ""
+    viderBaliseErreur(nomBalise)
     for (let i = 0; i < baliseCheckBox.length; i++) {
         if (baliseCheckBox[i].checked) {
             check = baliseCheckBox[i].value
@@ -76,12 +79,13 @@ function validerRadio(balise,nomBalise)
     catch(erreur){
         afficherMessageErreur(erreur.message,nomBalise)
     }
-    // console.log(couleur) // affiche la valeur du radio coché
+   
 }
 
 function validerCheckBox(balise)
 {
   let baliseCheckBox = document.getElementById(`${balise}`).checked
+  viderBaliseErreur(balise)
   try{
     if(!baliseCheckBox){
         throw new Error("Veuillez cocher la case J'ai lu et accepté les conditions d'utilisation.")  
@@ -105,5 +109,13 @@ function afficherMessageErreur(message,balise) {
         spanErreurMessage.innerText = message
     }
     
-    
+}
+
+function viderBaliseErreur(balise)
+{
+    // const baliseASupprimer = document.getElementById("erreurMessage")
+    let baliseASupprimer = document.getElementById(`erreurMessage${balise}`)
+   if(baliseASupprimer){
+    baliseASupprimer.remove()
+    }
 }

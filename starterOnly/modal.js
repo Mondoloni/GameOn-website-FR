@@ -41,6 +41,7 @@ form.addEventListener("submit",(event)=>{
   //On empêche le comportement par défaut
   event.preventDefault();
   
+
   validerChampCivilite(`first`,"Prénom");
   validerChampCivilite(`last`,"Nom");
   validerEmail(`email`);
