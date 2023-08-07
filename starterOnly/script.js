@@ -10,7 +10,7 @@ viderBaliseErreur(balise)
     try{
         if (baliseAValider.value.length < 2) 
         {
-            throw new Error(`Le ${texte} est trop court. `)
+            throw new Error(`Veuillez entrer 2 caractères ou plus pour le champ du ${texte}. `)
         }
     }
     catch(erreur){
@@ -36,6 +36,24 @@ function validerEmail(email) {
         afficherMessageErreur(erreur.message,email)
     }
    
+}
+
+function birthdate(balise)
+{
+    const baliseBirthdate=document.getElementById(`${balise}`)
+    let birthdateRegExp = RegExp(/^\d{4}-\d{2}-\d{2}$/)
+    viderBaliseErreur(balise)
+    try
+    {
+        if (!birthdateRegExp.test(baliseBirthdate.value)) 
+        {
+            throw new Error("Vous devez entrer votre date de naissance.")
+        }
+    }
+    catch(erreur)
+    {
+        afficherMessageErreur(erreur.message,balise)
+    }   
 }
 
 function validerNbr(balise)
@@ -70,7 +88,7 @@ function validerRadio(balise,nomBalise)
     try{
         if(check=="")
         {
-            throw new Error("Veuillez cocher une case.")  
+            throw new Error("Vous devez choisir une option.")  
         }
         else{
             afficherMessageErreur("",nomBalise)
@@ -88,7 +106,7 @@ function validerCheckBox(balise)
   viderBaliseErreur(balise)
   try{
     if(!baliseCheckBox){
-        throw new Error("Veuillez cocher la case J'ai lu et accepté les conditions d'utilisation.")  
+        throw new Error("Vous devez vérifier que vous acceptez les termes et conditions.")  
     }
   }
   catch(erreur){

@@ -45,6 +45,7 @@ form.addEventListener("submit",(event)=>{
   validerChampCivilite(`first`,"Prénom");
   validerChampCivilite(`last`,"Nom");
   validerEmail(`email`);
+  birthdate(`birthdate`);
   validerNbr('quantity');
   validerRadio(`location`,`location6`)
   validerCheckBox(`checkbox1`)
