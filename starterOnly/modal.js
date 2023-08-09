@@ -14,7 +14,7 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const fermetureModal = document.querySelectorAll(".close");
 const form=document.querySelector('form');
-
+const btnFermerConfirmation=document.getElementById("btn-fermer");
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -39,6 +39,8 @@ function closeModal() {
   modalbg.style.display = "none";
 }
 
+
+
 //Ajout d'un évévement lorsque l'on submit le formulaire
 form.addEventListener("submit",(event)=>{
 
@@ -59,3 +61,10 @@ if(validerChampCivilite(`first`,"Prénom") &&
 }
 
 });
+
+btnFermerConfirmation.addEventListener("click",(event)=>{
+  //On empêche le comportement par défaut
+  event.preventDefault();
+  modalbg.style.display = "none";
+  
+})
