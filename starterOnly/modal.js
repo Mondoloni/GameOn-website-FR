@@ -7,6 +7,7 @@ function editNav() {
   }
 }
 
+
 // DOM Elements
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
@@ -20,7 +21,10 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
 // launch modal form
 function launchModal() {
+  document.querySelector(".formConfirmation").style.display = "none";
+  document.querySelector(".modal-body").style.display = "block";
   modalbg.style.display = "block";
+  
 }
 
 
@@ -42,11 +46,16 @@ form.addEventListener("submit",(event)=>{
   event.preventDefault();
   
 
-  validerChampCivilite(`first`,"Prénom");
-  validerChampCivilite(`last`,"Nom");
-  validerEmail(`email`);
-  birthdate(`birthdate`);
-  validerNbr('quantity');
-  validerRadio(`location`,`location6`)
-  validerCheckBox(`checkbox1`)
+if(validerChampCivilite(`first`,"Prénom") && 
+    validerChampCivilite(`last`,"Nom") && 
+    validerEmail(`email`) && 
+    birthdate(`birthdate`) && 
+    validerNbr('quantity') && 
+    validerRadio(`location`,`location6`) &&
+    validerCheckBox(`checkbox1`))
+{
+  document.querySelector(".modal-body").style.display = "none";
+  document.querySelector(".formConfirmation").style.display = "block";
+}
+
 });

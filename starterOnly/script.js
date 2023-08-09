@@ -12,6 +12,7 @@ viderBaliseErreur(balise)
         {
             throw new Error(`Veuillez entrer 2 caractères ou plus pour le champ du ${texte}. `)
         }
+        return true
     }
     catch(erreur){
         afficherMessageErreur(erreur.message,balise)
@@ -30,6 +31,7 @@ function validerEmail(email) {
         {
             throw new Error("L'email n'est pas valide.")
         }
+        return true 
     }
     catch(erreur)
     {
@@ -49,6 +51,7 @@ function birthdate(balise)
         {
             throw new Error("Vous devez entrer votre date de naissance.")
         }
+        return true
     }
     catch(erreur)
     {
@@ -67,6 +70,7 @@ function validerNbr(balise)
         {
             throw new Error("Veuillez saisir un nombre.")
         }
+        return true
     }
     catch(erreur)
     {
@@ -92,6 +96,7 @@ function validerRadio(balise,nomBalise)
         }
         else{
             afficherMessageErreur("",nomBalise)
+            return true
         }
     }
     catch(erreur){
@@ -108,6 +113,7 @@ function validerCheckBox(balise)
     if(!baliseCheckBox){
         throw new Error("Vous devez vérifier que vous acceptez les termes et conditions.")  
     }
+    return true
   }
   catch(erreur){
     afficherMessageErreur(erreur.message,balise)
