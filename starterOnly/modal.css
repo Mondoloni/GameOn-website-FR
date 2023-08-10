@@ -406,7 +406,7 @@ input[data-error]::after {
   font-size: 16px;
 }
 .hero-section {
-  min-height: 93vh;
+  /* min-height: 93vh; */
   border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -514,7 +514,15 @@ footer {
   line-height:142.6%;
 
 }
-@media screen and (max-width: 800px) {
+
+/* @media screen and (max-width: 1024px) {
+.hero-headline{
+font-size: 4.5rem;
+}
+} */
+
+@media screen and (max-width: 1024px) {
+  /* @media screen and (max-width: 1024px) { */
   .hero-section {
     display: block;
     box-shadow: unset;
