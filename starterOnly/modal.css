@@ -406,6 +406,8 @@ input[data-error]::after {
   font-size: 16px;
 }
 .hero-section {
+  /*Suppression de cette propriété afin 
+  de ne pas avoir trop d'espace avant le footer*/
   /* min-height: 93vh; */
   border-radius: 10px;
   display: grid;
@@ -480,12 +482,12 @@ footer {
   margin: 0 20px;
 }
 
+/**Propriétées de la modal de confirmation d'inscription*/
 .formConfirmation {
   padding: 15px 8%;
   margin: 15px auto;
   display: none;
   height:706px;
- 
 }
 
 .formConfirmationFlex{
@@ -502,8 +504,10 @@ footer {
 .formConfirmation input{
   align-self: flex-end;
 }
+/****************************/
 
-
+/*Ajout de la classe span: Balise dans lequel est inclus
+le message d'erreur du formulaire */
 .formData span{
   width:260px;
   color:#FF4E60;
@@ -512,17 +516,11 @@ footer {
   font-style:normal;
   font-weight:400;
   line-height:142.6%;
-
 }
+/**************************/
 
-/* @media screen and (max-width: 1024px) {
-.hero-headline{
-font-size: 4.5rem;
-}
-} */
-
+/*Media queries pour le format tablette*/
 @media screen and (max-width: 1024px) {
-  /* @media screen and (max-width: 1024px) { */
   .hero-section {
     display: block;
     box-shadow: unset;
@@ -539,7 +537,6 @@ font-size: 4.5rem;
     display: none;
   }
   .hero-headline {
-    /* font-family: DM sans-serif; */
     font-size: 40px;
     font-weight: 500;
     line-height: normal;
