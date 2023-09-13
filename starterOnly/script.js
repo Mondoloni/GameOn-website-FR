@@ -31,7 +31,9 @@ cette fonction valide qu'un champ email est au bon format
 *Retourne vrai si le champ est valide
 */
 function validerEmail(email) {
+    //Récupération de la balise
     const baliseEmail=document.getElementById(`${email}`)
+    //Création d'une expression régulières de type XX@XX.XX
     let emailRegExp = new RegExp("[a-z0-9._-]+@[a-z0-9._-]+\\.[a-z0-9._-]+")
     //Appel de la fonction viderBaliseErreur afin de supprimer le message d'erreur 
     //d'une precedente valiaton du formulaire
@@ -60,6 +62,7 @@ cette fonction valide qu'un champ date de naissance est au bon format
 function birthdate(balise)
 {
     const baliseBirthdate=document.getElementById(`${balise}`)
+    //Création d'une expression régulières de type 1111-11-11
     let birthdateRegExp = RegExp(/^\d{4}-\d{2}-\d{2}$/)
     viderBaliseErreur(balise)
     try
@@ -85,6 +88,7 @@ cette fonction valide que le champ est bien remplie avec des nombres
 function validerNbr(balise)
 {
     const baliseNbr=document.getElementById(`${balise}`)
+     //Création d'une expression régulières de type valeur numérique
     let nbrRegExp = new RegExp("[0-9]+")
     viderBaliseErreur(balise)
     try
@@ -145,6 +149,7 @@ cette fonction valide que la checkbox est coché
 */
 function validerCheckBox(balise)
 {
+    //Récupération de la propriété checked de la balise passée en paramétre
   let baliseCheckBox = document.getElementById(`${balise}`).checked
   viderBaliseErreur(balise)
   try{
